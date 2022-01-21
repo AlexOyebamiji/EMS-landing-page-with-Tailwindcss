@@ -9,7 +9,7 @@
   </head>
   <body>
       <!-- NAVIGATION BAR -->
-      <div class="w- w-full fixed flex flex-wrap justify-between w-100 bg-sectionorange pt-2 px-5 md:px-10 lg:px-20">
+      <div class="w- w-full z-30 fixed flex flex-wrap justify-between w-100 bg-sectionorange pt-2 px-5 md:px-10 lg:px-20">
         <ul>
             <img src="./images/EMS.svg" alt="Logo" class="w-12">
         </ul>
@@ -41,7 +41,7 @@
        </div>
   
         <div id="about" class="bg-black h-60 flex justify-center items-center">
-            <p class="text-white font-mono text-sm px-5 md:px-10 text-justify md:text-xl">E-Millenial Store is an hypothetical online store for gadgets we believe every 'Millenial' or
+            <p class="text-white font-mono text-sm px-5 md:px-10 text-justify md:text-2xl">E-Millenial Store is an hypothetical online store for gadgets we believe every 'Millenial' or
                 'Gen-Z should have today.  We've got mobiles phones, laptops, smartwatches and other gadgets.
                 Explore all our gadgets and choose the ones that suit you.
             </p>
@@ -52,35 +52,59 @@
                 <h2 class="flex justify-center font-extrabold pt-2 md:text-2xl">OUR GADGETS</h2>
             </div>
             <div class="flex flex-wrap justify-center items-center gap-6 text-center pt-4 w-auto max-h-full">
-                <div>
-                    <img src="./images/product1.png" alt="product1" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product1.png" alt="product1" class="w-24 rounded-md md:w-44 " id="color1">
+                    <div class="absolute hidden text-center color01 top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;390,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-sm pt-2 pb-2 md:text-xl lg:font-medium">SAMSUNG TV</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el1" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
-                <div>
-                    <img src="./images/product2.png" alt="product2" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product2.png" alt="product2" class="w-24 rounded-md md:w-44" id="color2">
+                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;280,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">PIXEL 4a</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el2" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
-                <div>
-                    <img src="./images/product3.png" alt="product3" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product3.png" alt="product3" class="w-24 rounded-md md:w-44 " id="color3">
+                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;650,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">PS 5</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el3" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
-                <div>
-                    <img src="./images/product4.png" alt="product4" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product4.png" alt="product4" class="w-24 rounded-md md:w-44" id="color4">
+                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;800,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">MACBOOK AIR</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el4" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
-                <div>
-                    <img src="./images/product5.png" alt="product5" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product5.png" alt="product5" class="w-24 rounded-md md:w-44" id="color5">
+                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;210,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">APPLE WATCH</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el5" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
-                <div>
-                    <img src="./images/product6.png" alt="product6" class="w-24 rounded-md md:w-44">
+                <div class="relative">
+                    <img src="./images/product6.png" alt="product6" class="w-24 rounded-md md:w-44" id="color6">
+                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                        <h1 class="underline decoration-2">Price</h1>
+                        <h2>&#8358;200,000</h2>
+                    </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">AIR PODS</h2>
-                    <button class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6" onclick="increment()">ADD TO CART</button>
+                    <button id="remove-el6" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
             </div>
         </div>
@@ -92,6 +116,6 @@
         </div>
     
     <script type="module" src="/main.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
