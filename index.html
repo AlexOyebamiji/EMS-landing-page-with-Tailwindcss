@@ -1,118 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE E-MILLENIAL STORE</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-      <!-- NAVIGATION BAR -->
-      <div class="w- w-full z-30 fixed flex flex-wrap justify-between w-100 bg-sectionorange pt-2 px-5 md:px-10 lg:px-20">
-        <ul>
-            <img src="./images/EMS.svg" alt="Logo" class="w-12">
-        </ul>
-        <ul class="flex gap-4 md:text-xl">
-            <a href="#intro"><li>Intro</li></a>
-            <a href="#about"><li>About</li></a>
-            <a href="#shop"><li>Shop</li></a>
-        </ul>
-        <button class="bg-cartorange h-6 py-3 flex items-center rounded-full w-12">
-            <img src="./images/cart.svg" alt="cart" class="w-12 h-5">
-            <p id="count-el" class="mr-2 text-white">0</p>
-        </button>
-      </div>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>THE E-MILLENIAL STORE</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <!-- NAVIGATION BAR -->
+        <div class="h-[100%] bg-sectionorange">
+            <div class="max-w-[1200px] flex justify-between text-center items-center my-0 mx-auto py-0 px-5">
+                <div>
+                    <img src="./images/EMS.svg" alt="Logo" class="w-12">
+                </div>
+                <ul class="flex gap-4 md:text-xl">
+                    <li><a href="#">Intro</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+                <button class="bg-cartorange h-6 py-3 flex items-center rounded-full w-12 show">
+                    <img src="./images/cart.svg" alt="cart" class="w-12 h-5">
+                    <p id="count-el" class="mr-2 text-white">0</p>
+                </button>
+            </div>
+            
+            
+        </div>
+
+            <!-- The Items Section -->
+            <!-- NOT Responsive -->
+        <div class=" showCart">
+            <div class="flex justify-center">
+                <div class="bg-white h-auto w-[35%] absolute">
+                    <div class="mt-0">
+                        <div class="flex gap-6 font-semibold">
+                            <h1>S/N</h1>
+                            <h1 class="basis-[23%]">Item</h1>
+                            <h1 class="basis-[18%]">Price</h1>
+                            <h1>Quantity</h1>
+                        </div>
+                        
+                        <div class="hidden Mac">
+                            <div class="flex justify-between mt-2">
+                                <p class=""></p>
+                                <p>MacBook Air</p>
+                                <p class="multipyMac">&#8358;800000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseMac">-</button> <p class="-mr-9 -ml-9 macOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseMac">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeMac">Remove</button>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden Apple">
+                            <div class="flex justify-between mt-2">
+                                <p></p>
+                                <p>Apple Watch</p>
+                                <p class="multiplyApple">&#8358;210,000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseApple">-</button> <p class="-mr-9 -ml-9 appleOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseApple">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeAppleWatch">Remove</button>
+                            </div>
+                        </div>
+    
+                        <div class="hidden Samsung">
+                            <div class="flex justify-between mt-2">
+                                <p></p>
+                                <p>Samsung TV</p>
+                                <p class="multiplySamsung">&#8358;390,000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseSamsung">-</button> <p class="-mr-9 -ml-9 samsungOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseSamsung">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeSamsungTv">Remove</button>
+                            </div>
+                        </div>
+    
+                        <div class="hidden Pixel">
+                            <div class="flex justify-between mt-2">
+                                <p></p>
+                                <p class="basis-[19%]">Pixel 4a</p>
+                                <p class="multiplyPixel">&#8358;280000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreasePixel">-</button> <p class="-mr-9 -ml-9 pixelOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increasePixel">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removePixel">Remove</button>
+                            </div>
+                        </div>
+    
+                        <div class="hidden Airpods">
+                            <div class="flex justify-between mt-2">
+                                <p></p>
+                                <p class="basis-[20%]">Air Pods</p>
+                                <p class="multiplyAirpods">&#8358;200000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseAirpods">-</button> <p class="-mr-9 -ml-9 airpodsOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseAirpods">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeAirpod">Remove</button>
+                            </div>
+                        </div>
+    
+                        <div class="hidden PS5">
+                            <div class="flex justify-between mt-2">
+                                <p></p>
+                                <p class="basis-[20%]">PS5</p>
+                                <p class="multiplyPS5">&#8358;650000</p>
+                                <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreasePS5">-</button> <p class="-mr-9 -ml-9 PS5One"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increasePS5">+</button>
+                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removePS5">Remove</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="mt-3 flex justify-center">
+                        <form class="space-y-2">
+                            <input class="border-2 bg-sectionorange w-80" type="text" name="" id="Name" placeholder="Your Name"> <br>
+                            <input class="border-2 bg-sectionorange w-80" type="text" name="" id="Email" placeholder="Your Email"> <br>
+                            <input class="border-2 bg-sectionorange w-80" type="text" name="" id="Phone-number" placeholder="Your Phone Number"> <br>
+                        </form>
+                    </div>
+    
+                    <div class="mt-2 flex justify-center space-y-2 ">
+                        <div>
+                            <p class="font-bold">Total Amount to be paid</p>
+                            <p class="text-center font-bold">&#8358;915000</p>
+                        </div>
+                    </div>
+                    
+                    <div >
+                        <div class="mt-2 flex gap-1 justify-end">
+                            <button class="bg-lightorange text-white rounded-md pl-2 pr-2 pt-2 pb-2">Continue Shopping</button>
+                            <button class="bg-shoporange text-white rounded-md pl-4 pr-4 pt-2 pb-2">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      
 
        <!-- INTRO SECTION -->
-       <div id="intro" class="bg-sectionorange -mt-1 h-64 pt-10 lg:h-90">
-           <div class="flex justify-between w-full px-5 md:px-10 lg:px-20">
-            <div 
-            class="text-cartorange">
-                <h2 class="text-2xl w-max font-bold lg:text-5xl">THE <br> E-MILLENIAL <br> STORE</h2>
-            </div>
-            <div>
-                <img src="./images/heroImage.png" alt="EMS" class="w-40 lg:w-70">
+       <div id="intro" class="bg-sectionorange h-64 pt-10 lg:h-90"> 
+            <div class="flex max-w-[1150px] my-0 mx-auto py-0 px-5 justify-between">
+                <div class="text-cartorange">
+                    <h2 class="text-2xl w-max font-bold lg:text-5xl">THE <br> E-MILLENIAL <br> STORE</h2> 
+                </div>
+                <div>
+                    <img src="./images/heroImage.png" alt="EMS" class="w-40 lg:w-70">
+                </div>
+            </div> 
+            <div class="flex justify-center">
+                <button class="text-white bg-shoporange rounded-md mt-5 pl-12 pr-12 pt-2 pb-2">Shop Now</button>
             </div>
         </div>
-        <div class="flex justify-center">
-            <button class="text-white bg-shoporange rounded-md mt-5 pl-12 pr-12 pt-2 pb-2">Shop Now</button>
-        </div>
-       </div>
   
-        <div id="about" class="bg-black h-60 flex justify-center items-center">
-            <p class="text-white font-mono text-sm px-5 md:px-10 text-justify md:text-2xl">E-Millenial Store is an hypothetical online store for gadgets we believe every 'Millenial' or
-                'Gen-Z should have today.  We've got mobiles phones, laptops, smartwatches and other gadgets.
-                Explore all our gadgets and choose the ones that suit you.
-            </p>
+        <div id="about" class="bg-black h-[200px] flex justify-center items-center">
+            <div class="max-w-[1200px] my-0 mx-auto py-0 px-5">
+                <p class="text-white font-mono text-sm text-justify md:text-2xl">E-Millenial Store is an hypothetical online store for gadgets we believe every 'Millenial' or
+                    'Gen-Z should have today.  We've got mobiles phones, laptops, smartwatches and other gadgets.
+                    Explore all our gadgets and choose the ones that suit you.
+                </p>
+            </div>
+            
         </div>
+
         <!-- GOODS SECTION -->
         <div id="shop" class="h-full">
             <div>
                 <h2 class="flex justify-center font-extrabold pt-2 md:text-2xl">OUR GADGETS</h2>
             </div>
-            <div class="flex flex-wrap justify-center items-center gap-6 text-center pt-4 w-auto max-h-full">
+
+            <div class="flex flex-wrap justify-center items-center gap-2 text-center pt-4 w-auto max-h-full md:gap-6">
                 <div class="relative">
-                    <img src="./images/product1.png" alt="product1" class="w-24 rounded-md md:w-44 " id="color1">
-                    <div class="absolute hidden text-center color01 top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product1.png" alt="product1" class="w-28 rounded-md md:w-44 " id="color1">
+                    <div class="absolute hide hidden text-center color01 top-6 w-28 font-bold leading-10 text-white md:w-40 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;390,000</h2>
                     </div>
                     <h2 class="font-extrabold text-sm pt-2 pb-2 md:text-xl lg:font-medium">SAMSUNG TV</h2>
-                    <button id="remove-el1" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el1" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
                 <div class="relative">
-                    <img src="./images/product2.png" alt="product2" class="w-24 rounded-md md:w-44" id="color2">
-                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product2.png" alt="product2" class="w-28 rounded-md md:w-44" id="color2">
+                    <div class="absolute hide hidden text-center top-6 w-28 font-bold leading-10 text-white md:w-40 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;280,000</h2>
                     </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">PIXEL 4a</h2>
-                    <button id="remove-el2" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el2" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
                 <div class="relative">
-                    <img src="./images/product3.png" alt="product3" class="w-24 rounded-md md:w-44 " id="color3">
-                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product3.png" alt="product3" class="w-28 rounded-md md:w-44 " id="color3">
+                    <div class="absolute hide hidden text-center top-6 w-28 font-bold leading-10 text-white md:w-40 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;650,000</h2>
                     </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">PS 5</h2>
-                    <button id="remove-el3" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el3" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
                 <div class="relative">
-                    <img src="./images/product4.png" alt="product4" class="w-24 rounded-md md:w-44" id="color4">
-                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product4.png" alt="product4" class="w-28 rounded-md md:w-44" id="color4">
+                    <div class="absolute hide hidden text-center top-6 w-28 font-bold leading-10 text-white md:w-40 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;800,000</h2>
                     </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">MACBOOK AIR</h2>
-                    <button id="remove-el4" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el4" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
                 <div class="relative">
-                    <img src="./images/product5.png" alt="product5" class="w-24 rounded-md md:w-44" id="color5">
-                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product5.png" alt="product5" class="w-28 rounded-md md:w-44" id="color5">
+                    <div class="absolute hide hidden text-center top-6 w-28 font-bold leading-10 text-white md:w-44 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;210,000</h2>
                     </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">APPLE WATCH</h2>
-                    <button id="remove-el5" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el5" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
                 <div class="relative">
-                    <img src="./images/product6.png" alt="product6" class="w-24 rounded-md md:w-44" id="color6">
-                    <div class="absolute hidden text-center top-6 w-24 font-bold leading-10 text-white md:w-44 md:top-20">
+                    <img src="./images/product6.png" alt="product6" class="w-28 rounded-md md:w-44" id="color6">
+                    <div class="absolute hide hidden text-center top-6 w-28 font-bold leading-10 text-white md:w-40 md:top-20">
                         <h1 class="underline decoration-2">Price</h1>
                         <h2>&#8358;200,000</h2>
                     </div>
                     <h2 class="font-extrabold text-center text-sm pt-2 pb-2 md:text-xl lg:font-medium">AIR PODS</h2>
-                    <button id="remove-el6" class="text-xs font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
+                    <button id="remove-el6" class="text-[10px] font-bold bg-shoporange rounded py-2 px-2 md:px-6">ADD TO CART</button>
                 </div>
             </div>
         </div>
         
         <!-- FOOTER -->
-        <div class="bg-black h-28 mt-14 flex flex-wrap items-center justify-between px-5 md:px-10">
-            <img src="./images/EMS.svg" alt="Logo" class="w-12">
-            <h2 class="text-white">Designed and crafted by Lex.</h2>
+        <div class="bg-black h-[70px] mt-10">
+            <div class="max-w-[1200px] my-0 mx-auto py-0 px-5">
+                <div class="flex pt-4 items-center justify-between">
+                    <img src="./images/EMS.svg" alt="Logo" class="w-12">
+                    <h2 class="text-white">Designed and crafted by Lex.</h2>
+                </div>
+            </div>
+            
         </div>
     
     <script type="module" src="/main.js"></script>
