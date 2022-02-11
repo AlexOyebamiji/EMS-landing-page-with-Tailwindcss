@@ -9,7 +9,7 @@
     </head>
     <body>
         <!-- NAVIGATION BAR -->
-        <div class="h-[100%] bg-sectionorange">
+        <div class="h-[100%] box-border bg-sectionorange">
             <div class="max-w-[1200px] flex justify-between text-center items-center my-0 mx-auto py-0 px-5">
                 <div>
                     <img src="./images/EMS.svg" alt="Logo" class="w-12">
@@ -30,74 +30,67 @@
 
             <!-- The Items Section -->
             <!-- NOT Responsive -->
-        <div class=" showCart">
+        <div class="hidden showCart">
             <div class="flex justify-center">
                 <div class="bg-white h-auto w-[35%] absolute">
                     <div class="mt-0">
-                        <div class="flex gap-6 font-semibold">
-                            <h1>S/N</h1>
-                            <h1 class="basis-[23%]">Item</h1>
-                            <h1 class="basis-[18%]">Price</h1>
+                        <div class="flex gap-[99px] font-semibold">
+                            <h1>Item</h1>
+                            <h1>Price</h1>
                             <h1>Quantity</h1>
                         </div>
                         
                         <div class="hidden Mac">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p>MacBook Air</p>
-                                <p class="multiplyMac">800000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showMac w-24"></p>
+                                <span class="flex">₦<p class="multiplyMac w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseMac">-</button> <p class="-mr-9 -ml-9 macOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseMac">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeMac">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removeMac">Remove</button>
                             </div>
                         </div>
                         
                         <div class="hidden Apple">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p>Apple Watch</p>
-                                <p class="multiplyApple">210000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showApple w-24"></p>
+                                <span class="flex">₦<p class="multiplyApple w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseApple">-</button> <p class="-mr-9 -ml-9 appleOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseApple">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeAppleWatch">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removeAppleWatch">Remove</button>
                             </div>
                         </div>
     
                         <div class="hidden Samsung">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p>Samsung TV</p>
-                                <p class="multiplySamsung">&#8358;390,000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showSamsung w-24"></p>
+                                <span class="flex">₦<p class="multiplySamsung w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseSamsung">-</button> <p class="-mr-9 -ml-9 samsungOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseSamsung">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeSamsungTv">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removeSamsungTv">Remove</button>
                             </div>
                         </div>
     
                         <div class="hidden Pixel">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p class="basis-[19%]">Pixel 4a</p>
-                                <p class="multiplyPixel">&#8358;280000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showPixel w-24"></p>
+                                <span class="flex">₦<p class="multiplyPixel w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreasePixel">-</button> <p class="-mr-9 -ml-9 pixelOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increasePixel">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removePixel">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removePixel">Remove</button>
                             </div>
                         </div>
     
                         <div class="hidden Airpods">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p class="basis-[20%]">Air Pods</p>
-                                <p class="multiplyAirpods">&#8358;200000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showAirpods w-24"></p>
+                                <span class="flex">₦<p class="multiplyAirpods w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreaseAirpods">-</button> <p class="-mr-9 -ml-9 airpodsOne"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increaseAirpods">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removeAirpod">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removeAirpod">Remove</button>
                             </div>
                         </div>
     
                         <div class="hidden PS5">
-                            <div class="flex justify-between mt-2">
-                                <p class=""></p>
-                                <p class="basis-[20%]">PS5</p>
-                                <p class="multiplyPS5">650000</p>
+                            <div class="flex gap-10 mt-2">
+                                <p class="showPS5 w-24"></p>
+                                <span class="flex">₦<p class="multiplyPS5 w-20"></p></span>
                                 <button class="bg-shoporange text-white rounded-md pl-2 pr-2 decreasePS5">-</button> <p class="-mr-9 -ml-9 PS5One"> 1 </p> <button class="bg-shoporange text-white rounded-md pl-2 pr-2 increasePS5">+</button>
-                                <button class="bg-lightorange text-white rounded-md pl-2 pr-2 removePS5">Remove</button>
+                                <button class="bg-lightorange text-black rounded-md pl-2 pr-2 removePS5">Remove</button>
                             </div>
                         </div>
                         
@@ -113,14 +106,14 @@
     
                     <div class="mt-2 flex justify-center space-y-2 ">
                         <div>
-                            <p class="font-bold">Total Amount to be paid</p>
-                            <p class="text-center font-bold totalAmt"></p>
+                            <p class="font-bold w-22 ">Total Amount to be Paid</p>
+                            <span class="flex w-22 justify-center font-bold">₦<p class="text-center font-bold totalAmt">0</p></span>
                         </div>
                     </div>
                     
                     <div >
                         <div class="mt-2 flex gap-1 justify-end">
-                            <button class="bg-lightorange text-white rounded-md pl-2 pr-2 pt-2 pb-2">Continue Shopping</button>
+                            <button class="bg-lightorange text-white rounded-md pl-2 pr-2 pt-2 pb-2 closeCart">Continue Shopping</button>
                             <button class="bg-shoporange text-white rounded-md pl-4 pr-4 pt-2 pb-2">Checkout</button>
                         </div>
                     </div>

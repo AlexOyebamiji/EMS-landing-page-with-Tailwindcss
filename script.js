@@ -7,7 +7,6 @@ const removeFromCart3 = document.querySelector("#remove-el3");
 const removeFromCart4 = document.querySelector("#remove-el4");
 const removeFromCart5 = document.querySelector("#remove-el5");
 const removeFromCart6 = document.querySelector("#remove-el6");
-
 const changeColor1 = document.querySelector("#color1");
 const changeColor2 = document.querySelector("#color2");
 const changeColor3 = document.querySelector("#color3");
@@ -15,22 +14,20 @@ const changeColor4 = document.querySelector("#color4");
 const changeColor5 = document.querySelector("#color5");
 const changeColor6 = document.querySelector("#color6");
 const hideEl = document.querySelectorAll(".hide");
-
 const macEl = document.querySelector('.Mac');
 const appleEl = document.querySelector('.Apple');
 const samsungEl = document.querySelector('.Samsung');
 const pixelEl = document.querySelector('.Pixel');
 const airPods = document.querySelector('.Airpods');
 const PS5 = document.querySelector('.PS5');
-
 const removeMacEl = document.querySelector('.removeMac');
 const removeAppleWatchEl = document.querySelector('.removeAppleWatch');
 const removeSamsungTvEl = document.querySelector('.removeSamsungTv');
 const removePixelEl = document.querySelector('.removePixel');
 const removeAirpodEl = document.querySelector('.removeAirpod');
 const removePS5El = document.querySelector('.removePS5');
-
 const showEl = document.querySelector('.show');
+const closeCartEl = document.querySelector('.closeCart');
 const showCartEl = document.querySelector('.showCart');
 const decreaseMacEl = document.querySelector('.decreaseMac');
 const increaseMacEl = document.querySelector('.increaseMac');
@@ -50,40 +47,98 @@ const samsungOneEl = document.querySelector('.samsungOne')
 const pixelOneEl = document.querySelector('.pixelOne');
 const PS5OneEl = document.querySelector('.PS5One')
 const airpodsOneEl = document.querySelector('.airpodsOne');
+const multiplyPixelEl = document.querySelector('.multiplyPixel');
+const multiplyAirpodsEl = document.querySelector('.multiplyAirpods');
+const multiplyPS5El = document.querySelector('.multiplyPS5');
+const multiplySamsungEl = document.querySelector('.multiplySamsung');
+const multiplyAppleEl = document.querySelector('.multiplyApple');
+const multiplyMacEl = document.querySelector('.multiplyMac');
+const totalAmtEl = document.querySelector('.totalAmt');
+const snEl = document.querySelectorAll('.sn');
+const showMacEl = document.querySelector('.showMac');
+const showPixelEl = document.querySelector('.showPixel');
+const showAirpodsEl = document.querySelector('.showAirpods');
+const showPS5EL = document.querySelector('.showPS5');
+const showSamsungEl = document.querySelector('.showSamsung');
+const showAppleEl = document.querySelector('.showApple');
+const snMacEl = document.querySelector('.snMac');
+const snPixelEl = document.querySelector('.snPixel');
+const snAirpodsEl = document.querySelector('.snAirpods');
+const snPS5EL = document.querySelector('.snPS5');
+const snSamsungEl = document.querySelector('.snSamsung');
+const snAppleEl = document.querySelector('.snApple');
 
 
-let multiplyPixelEl = document.querySelector('.multiplyPixel');
-let multiplyAirpodsEl = document.querySelector('.multiplyAirpods');
-let multiplyPS5El = document.querySelector('.multiplyPS5');
-let multiplySamsungEl = document.querySelector('.multiplySamsung');
-let multiplyAppleEl = document.querySelector('.multiplyApple');
-let multiplyMacEl = document.querySelector('.multiplyMac');
-
-
-const totalAmtEl = document.querySelector('.totalAmt')
-
-
-
+// Initialization
 let count = 0;
 const message0 = "ADD TO CART"
 const message = "REMOVE FROM CART";
-const increase = '+';
-const decrease = '-';
 
-const amount = {
-    pixel: 280000,
-    airpods: 200000,
-    ps5: 650000,
-    samsung: 390000,
-    apple: 210000,
-    macbook: 800000,
-};
+
+const carts = [
+    {
+        gadget: "Pixel 4a",
+        price: 280000
+    },
+
+    {
+        gadget: "Samsung TV",
+        price: 390000
+    },
+
+    {
+        gadget: "Macbook Air",
+        price: 800000
+    },
+
+    {
+        gadget: "Apple Watch",
+        price: 210000
+    },
+
+    {
+        gadget: "Airpods",
+        price: 200000
+    },
+
+    {
+        gadget: "PS5",
+        price: 650000
+    }
+];
+
 
 
 // Show cart box
-// showEl.addEventListener('click', function() {
-//     showCartEl.classList.remove('hidden');
+showEl.addEventListener('click', function() {
+    showCartEl.classList.remove('hidden');
+});
+
+// Close Cart box with continue shopping btn
+closeCartEl.addEventListener('click', function() {
+    showCartEl.classList.add('hidden');
+});
+
+//Use escape button to close cart box
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if(!showCartEl.classList.contains('hidden')) {
+            showCartEl.classList.add('hidden');
+        }
+    }
+});
+
+// Could not make onlclick to close modal
+
+// document.addEventListener('click', function(event) {
+//     console.log(event.target);
+//     if (event.target == showCartEl) {
+//         showCartEl.style.display = "none";
+//     }
 // })
+
+
+
 
 
 // Increasing Number
@@ -114,18 +169,18 @@ const decreaseMac = function() {
 
 increaseMacEl.addEventListener('click', function() {
     countMac();
-    const macIn = amount.macbook * macOneEl.textContent;
+    const macIn = carts[2]["price"] * macOneEl.textContent;
     multiplyMacEl.textContent = macIn;   
-    totalAmtEl.textContent = Number(amount.macbook) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[2]["price"]) + Number(totalAmtEl.textContent);
 });
 
 
 decreaseMacEl.addEventListener('click', function() {
     if (macOneEl.textContent <= 1) return
     decreaseMac()
-    const macDec = multiplyMacEl.textContent - amount.macbook;
+    const macDec = multiplyMacEl.textContent - carts[2]["price"];
     multiplyMacEl.textContent = macDec
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.macbook)
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(carts[2]["price"])
     
 });
 
@@ -144,18 +199,18 @@ const decreaseApple = function() {
 
 increaseAppleEl.addEventListener('click', function() {
     countApple();
-    const appleIn = amount.apple * appleOneEl.textContent;
+    const appleIn = carts[3]["price"] * appleOneEl.textContent;
     multiplyAppleEl.textContent = appleIn;
-    totalAmtEl.textContent = Number(amount.apple) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[3]["price"]) + Number(totalAmtEl.textContent);
 });
 
 
 decreaseAppleEl.addEventListener('click', function() {
     if (appleOneEl.textContent <= 1) return
     decreaseApple();
-    const appleDec = multiplyAppleEl.textContent - amount.apple
+    const appleDec = multiplyAppleEl.textContent - carts[3]["price"];
     multiplyAppleEl.textContent = appleDec;
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.apple);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(carts[3]["price"]);
    
 });
 
@@ -174,18 +229,18 @@ const decreaseSamsung = function() {
 
 increaseSamsungEl.addEventListener('click', function() {
     countSamsung();
-    const samsungIn = amount.samsung * samsungOneEl.textContent;
+    const samsungIn = carts[1]["price"] * samsungOneEl.textContent;
     multiplySamsungEl.textContent = samsungIn;
-    totalAmtEl.textContent = Number(amount.samsung) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[1]["price"]) + Number(totalAmtEl.textContent);
     
 });
 
 decreaseSamsungEl.addEventListener('click', function() {
     if (samsungOneEl.textContent <= 1) return
     decreaseSamsung();
-    const samsungDec = multiplySamsungEl.textContent - amount.samsung;
+    const samsungDec = multiplySamsungEl.textContent - carts[1]["price"];
     multiplySamsungEl.textContent = samsungDec
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.samsung) ;
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(carts[1]["price"]) ;
 });
 
 // Increasing/Decreasing Pixel Quantity
@@ -205,18 +260,18 @@ const decreasePixel = function() {
 
 increasePixelEl.addEventListener('click', function() {
     countPixel();
-    const pixelIn = amount.pixel * pixelOneEl.textContent;
+    const pixelIn = carts[0]["price"] * pixelOneEl.textContent;
     multiplyPixelEl.textContent = pixelIn;
-    totalAmtEl.textContent = Number(amount.pixel) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[0]["price"]) + Number(totalAmtEl.textContent);
 });
 
 
 decreasePixelEl.addEventListener('click', function() {
     if (pixelOneEl.textContent <= 1) return
     decreasePixel();
-    const pixelDec = multiplyPixelEl.textContent - amount.pixel;
+    const pixelDec = multiplyPixelEl.textContent - carts[0]["price"];
     multiplyPixelEl.textContent = pixelDec ;
-    totalAmtEl.textContent =  Number(totalAmtEl.textContent) - Number(amount.pixel);
+    totalAmtEl.textContent =  Number(totalAmtEl.textContent) - Number(carts[0]["price"]);
 });
 
 
@@ -237,17 +292,17 @@ const decreaseAirpod = function() {
 
 increaseAirpodsEl.addEventListener('click', function() {
     countAirpod();
-    const airpodIn = amount.airpods * airpodsOneEl.textContent;
+    const airpodIn = carts[4]["price"] * airpodsOneEl.textContent;
     multiplyAirpodsEl.textContent = airpodIn;
-    totalAmtEl.textContent = Number(amount.airpods) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[4]["price"]) + Number(totalAmtEl.textContent);
 });
 
 decreaseAirpodsEl.addEventListener('click', function() {
     if (airpodsOneEl.textContent <= 1) return
     decreaseAirpod();
-    const airpodDec = multiplyAirpodsEl.textContent - amount.airpods;
+    const airpodDec = multiplyAirpodsEl.textContent - carts[4]["price"];
     multiplyAirpodsEl.textContent = airpodDec;
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.airpods);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(carts[4]["price"]);
 });
 
 
@@ -266,82 +321,102 @@ const decreasePS5 = function() {
 
 increasePS5El.addEventListener('click', function() {
     countPS5();
-    const ps5In = amount.ps5 * PS5OneEl.textContent;
+    const ps5In = carts[5]["price"] * PS5OneEl.textContent;
     multiplyPS5El.textContent = ps5In;
-    totalAmtEl.textContent = Number(amount.ps5) + Number(totalAmtEl.textContent);
+    totalAmtEl.textContent = Number(carts[5]["price"]) + Number(totalAmtEl.textContent);
 });
 
 
 decreasePS5El.addEventListener('click', function() {
     if (PS5OneEl.textContent <= 1) return;
     decreasePS5();
-    const ps5Dec = multiplyPS5El.textContent - amount.ps5
+    const ps5Dec = multiplyPS5El.textContent - carts[5]["price"]
     multiplyPS5El.textContent = ps5Dec
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.ps5);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(carts[5]["price"]);
 });
 
 
 // Function to remove from cart
 
 const removeMac = function() {
+    macCount = 1;
     decreaseNum();
     removeFromCart4.textContent = message0;
     removeFromCart4.style.backgroundColor = '#ff9a3d';
     changeColor4.style.filter = "";
     hideEl[3].classList.add('hidden');
     macEl.classList.add('hidden');
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.macbook)
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number((carts[2]["price"]) * (macOneEl.textContent));
+    macOneEl.textContent = macCount;
+    multiplyMacEl.textContent = carts[2]["price"];
 };
 
 const removeAppleWatch = function() {
+    appleCount = 1;
     decreaseNum();
     removeFromCart5.textContent = message0;
     removeFromCart5.style.backgroundColor = '#ff9a3d';
     changeColor5.style.filter = "";
     hideEl[4].classList.add('hidden');
     appleEl.classList.add('hidden');
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.apple);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number((carts[3]["price"]) * (appleOneEl.textContent));
+    appleOneEl.textContent = appleCount;
+    multiplyAppleEl.textContent = carts[3]["price"];
 };
 
 const removeSamsungTv = function() {
+    samsungCount = 1;
     decreaseNum();
     removeFromCart1.textContent = message0;
     removeFromCart1.style.backgroundColor = '#ff9a3d';
     changeColor1.style.filter = "";
     hideEl[0].classList.add('hidden');
     samsungEl.classList.add('hidden');
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.samsung) ;
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number((carts[1]["price"]) * (samsungOneEl.textContent));
+    samsungOneEl.textContent = samsungCount;
+    multiplySamsungEl.textContent = carts[1]["price"];
 };
 
 const removePixel = function() {
+    pixelCount = 1;
     decreaseNum();
     removeFromCart2.textContent = message0;
     removeFromCart2.style.backgroundColor = '#ff9a3d';
     changeColor2.style.filter = "";
     hideEl[1].classList.add('hidden');
     pixelEl.classList.add('hidden');
-    totalAmtEl.textContent =  Number(totalAmtEl.textContent) - Number(amount.pixel);
+    totalAmtEl.textContent =  Number(totalAmtEl.textContent) - Number((carts[0]["price"]) * (pixelOneEl.textContent));
+    pixelOneEl.textContent = pixelCount;
+    multiplyPixelEl.textContent = carts[0]["price"];
 };
 
 const removeAirpod = function() {
+    airpodCount = 1;
     decreaseNum();
     removeFromCart6.textContent = message0;
     removeFromCart6.style.backgroundColor = '#ff9a3d';
     changeColor6.style.filter = "";
     hideEl[5].classList.add('hidden');
     airPods.classList.add('hidden');
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.airpods);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number((carts[4]["price"]) * (airpodsOneEl.textContent));
+    airpodsOneEl.textContent = airpodCount;
+    multiplyAirpodsEl.textContent = carts[4]["price"];
 };
 
+
 const removePS5 = function() {
+    ps5Count = 1;
     decreaseNum();
     removeFromCart3.textContent = message0;
     removeFromCart3.style.backgroundColor = '#ff9a3d';
     changeColor3.style.filter = "";
     hideEl[2].classList.add('hidden');
     PS5.classList.add('hidden');
-    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number(amount.ps5);
+    totalAmtEl.textContent = Number(totalAmtEl.textContent) - Number((carts[5]["price"]) * (PS5OneEl.textContent));
+    PS5OneEl.textContent = ps5Count;
+    multiplyPS5El.textContent = carts[5]["price"];
 };
+
 
 
 
@@ -353,12 +428,16 @@ removeFromCart1.addEventListener("click", function() {
         changeColor1.style.filter = "invert(30%) grayscale(100%)";
         hideEl[0].classList.remove('hidden');
         samsungEl.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.samsung) + Number(totalAmtEl.textContent);
-
-    }else if (removeFromCart1.textContent === message) {
+        showSamsungEl.textContent = carts[1]["gadget"];
+        multiplySamsungEl.textContent = carts[1]["price"];
+        totalAmtEl.textContent = Number(carts[1]["price"]) + Number(totalAmtEl.textContent);
+        
+    } else if (removeFromCart1.textContent === message) {
         removeSamsungTv();
     }
 });
+
+
 
 
 removeFromCart2.addEventListener("click", function() {
@@ -369,7 +448,10 @@ removeFromCart2.addEventListener("click", function() {
         changeColor2.style.filter = "invert(30%) grayscale(100%)";
         hideEl[1].classList.remove('hidden');
         pixelEl.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.pixel) + Number(totalAmtEl.textContent);
+        showPixelEl.textContent = carts[0]["gadget"] 
+        multiplyPixelEl.textContent = carts[0]["price"];
+        totalAmtEl.textContent = Number(carts[0]["price"]) + Number(totalAmtEl.textContent);
+        
 
     } else if (removeFromCart2.textContent === message) {
         removePixel();
@@ -386,7 +468,9 @@ removeFromCart3.addEventListener("click", function() {
         changeColor3.style.filter = "invert(30%) grayscale(100%)";
         hideEl[2].classList.remove('hidden');
         PS5.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.ps5) + Number(totalAmtEl.textContent);
+        showPS5EL.textContent = carts[5]["gadget"];
+        multiplyPS5El.textContent = carts[5]["price"];
+        totalAmtEl.textContent = Number(carts[5]["price"]) + Number(totalAmtEl.textContent);
 
     } else if (removeFromCart3.textContent === message) {
         removePS5();
@@ -403,8 +487,9 @@ removeFromCart4.addEventListener("click", function() {
         changeColor4.style.filter = "invert(30%) grayscale(100%)";
         hideEl[3].classList.remove('hidden');
         macEl.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.macbook) + Number(totalAmtEl.textContent);
-
+        showMacEl.textContent = carts[2]["gadget"];
+        multiplyMacEl.textContent = carts[2]["price"];
+        totalAmtEl.textContent = Number(carts[2]["price"]) + Number(totalAmtEl.textContent);
 
     }else if (removeFromCart4.textContent === message) {
         removeMac();
@@ -421,7 +506,9 @@ removeFromCart5.addEventListener("click", function() {
         changeColor5.style.filter = "invert(30%)";
         hideEl[4].classList.remove('hidden');
         appleEl.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.apple) + Number(totalAmtEl.textContent);
+        multiplyAppleEl.textContent = carts[3]["price"];
+        showAppleEl.textContent = carts[3]["gadget"];
+        totalAmtEl.textContent = Number(carts[3]["price"]) + Number(totalAmtEl.textContent);
     } else if (removeFromCart5.textContent === message) {
         removeAppleWatch();
     }
@@ -437,7 +524,9 @@ removeFromCart6.addEventListener("click", function() {
         changeColor6.style.filter = "invert(30%) grayscale(100%)";  
         hideEl[5].classList.remove('hidden');    
         airPods.classList.remove('hidden');
-        totalAmtEl.textContent = Number(amount.airpods) + Number(totalAmtEl.textContent)
+        showAirpodsEl.textContent = carts[4]["gadget"];
+        multiplyAirpodsEl.textContent = carts[4]["price"];
+        totalAmtEl.textContent = Number(carts[4]["price"]) + Number(totalAmtEl.textContent)
         
 
     } else if (removeFromCart6.textContent === message) {
@@ -479,3 +568,47 @@ removeAirpodEl.addEventListener('click', function() {
 removePS5El.addEventListener('click', function() {
     removePS5();
 });
+
+
+
+// var products = [{
+//     index: 1,
+//     id: 'p1',
+//     name: 'Samsung TV',
+//     price: 500000
+// },
+// {
+//     index: 2,
+//     id: 'p2',
+//     name: 'Pixel 4a',
+//     price: 250000
+// },
+// {
+//     index: 3,
+//     id: 'p3',
+//     name: 'PS 5',
+//     price: 300000
+// },
+// {
+//     index: 4,
+//     id: 'p4',
+//     name: 'MacBook Air',
+//     price: 800000
+// },
+// {
+//     index: 5,
+//     id: 'p5',
+//     name: 'Apple Watch',
+//     price: 95000
+// },
+// {
+//     index: 6,
+//     id: 'p6',
+//     name: 'Air Pods',
+//     price: 75000
+// },
+
+// ]
+
+// let a = products[0]["name"];
+// console.log(a);
